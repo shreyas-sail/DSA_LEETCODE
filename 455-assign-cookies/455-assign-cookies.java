@@ -1,6 +1,5 @@
 class Solution {
     public int findContentChildren(int[] g, int[] s) {
-        if (g.length-1 < 0 || s.length -1 < 0) return 0;
         Arrays.sort(g);
         Arrays.sort(s);
         int i= 0,j = 0,countChild = 0;
