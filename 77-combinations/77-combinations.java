@@ -10,7 +10,7 @@ class Solution {
             combs.add(new ArrayList<Integer>(comb));
             return;
         }
-        for(int i=start;i<=n;i++){
+        for(int i=start;i<=n-k+1;i++){
             comb.add(i);
             backtrack(combs,comb,i+1,n,k-1);
             comb.remove(comb.size()-1);
