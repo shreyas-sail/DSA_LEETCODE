@@ -12,13 +12,7 @@ class Solution {
                 stone2 = -pq.poll();
             else
                 break;
-            System.out.println(stone1);
-            System.out.println(stone2);
-            
-            int insertStone = Math.abs(stone1 - stone2);
-            //System.out.println(insertStone);
-            pq.add(-insertStone);
-            System.out.println(pq);
+            pq.add(-1 * Math.abs(stone1 - stone2));
             
         }
         return -pq.peek();
