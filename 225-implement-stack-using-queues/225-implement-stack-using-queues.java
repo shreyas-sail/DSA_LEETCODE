@@ -6,14 +6,10 @@ class MyStack {
     }
     
     public void push(int x) {
-        q2.offer(x);
-        while(!q1.isEmpty()){
-            q2.offer(q1.poll());
+        q1.offer(x);
+        for(int i = 0;i<q1.size()-1;i++){
+            q1.offer(q1.poll());
         }
-        while(!q2.isEmpty()){
-            q1.offer(q2.poll());
-        }
-        System.out.println(q1);
     }
     
     public int pop() {
