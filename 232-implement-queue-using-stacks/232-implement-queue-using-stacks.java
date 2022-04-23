@@ -11,20 +11,20 @@ class MyQueue {
     }
     
     public int pop() {
-        if(!outputStack.isEmpty())
-            return outputStack.pop();
-        while(!inputStack.isEmpty()){
-            outputStack.push(inputStack.pop());
+        if(outputStack.isEmpty()){
+            while(!inputStack.isEmpty()){
+                outputStack.push(inputStack.pop());
+            }
         }
         return outputStack.pop();
             
     }
     
     public int peek() {
-        if(!outputStack.isEmpty())
-            return outputStack.peek();
-        while(!inputStack.isEmpty()){
-            outputStack.push(inputStack.pop());
+        if(outputStack.isEmpty()){
+            while(!inputStack.isEmpty()){
+                outputStack.push(inputStack.pop());
+            }
         }
         return outputStack.peek();
     }
