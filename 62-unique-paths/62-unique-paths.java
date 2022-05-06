@@ -2,9 +2,11 @@ class Solution {
     public int uniquePaths(int m, int n) {
         int curRow = 0,curCol = 0;
         int[][] dp = new int[m][n];
-        for (int i = 0; i < m; i++)
-		for (int j = 0; j < n; j++)
-			dp[i][j] = -1;
+       // Arrays.fill(dp,-1);
+		for (int i = 0; i < m; i++)
+            Arrays.fill(dp[i],-1);
+		// for (int j = 0; j < n; j++)
+			// dp[i][j] = -1;
         int totalPaths = traverseRecursive(curRow,curCol,m,n,dp);
         return totalPaths;
     }
