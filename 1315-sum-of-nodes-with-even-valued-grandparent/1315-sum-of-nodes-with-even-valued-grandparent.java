@@ -26,10 +26,7 @@ class Solution {
         evenHelper(root.left,root,parent,sum);
         evenHelper(root.right,root,parent,sum);
         if(gParent!=null && gParent.val %2 == 0){
-            System.out.printf("%d --> %d ->%d\n",root.val,parent.val,gParent.val);
             sum[0] += root.val;
         }
-        // gParent = parent;
-        // parent = root;
     }
 }
