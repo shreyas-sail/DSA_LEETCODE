@@ -24,17 +24,16 @@ class Solution {
         
     }
     
-    public int maxHeight(TreeNode root,int level,int[] curMax){
-        if(root == null)    return 0 ;
-        int left = maxHeight(root.left,level+1,curMax);
-        int right = maxHeight(root.right,level+1,curMax);
+    public void maxHeight(TreeNode root,int level,int[] curMax){
+        if(root == null)    return ;
+        maxHeight(root.left,level+1,curMax);
+        maxHeight(root.right,level+1,curMax);
         if(curMax[0] < level){
             curMax[0] = level;
             curMax[1] = 0;
         }
         if(curMax[0] == level){
             curMax[1] +=root.val; 
-        }
-        return curMax[0]; 
+        } 
     }
 }
