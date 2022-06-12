@@ -14,19 +14,20 @@
  * }
  */
 class Solution {
-    public int noOfNodes = 0; 
     public int averageOfSubtree(TreeNode root) {
-        avgSubtree(root);
-        return noOfNodes;
+        int[] noOfNodes = new int[1];
+        noOfNodes[0] = 0;
+        avgSubtree(root, noOfNodes);
+        return noOfNodes[0];
         
     }
-    public Pair avgSubtree(TreeNode root){
+    public Pair avgSubtree(TreeNode root,int[] noOfNodes){
         if(root == null) return new Pair(0,0);
-        Pair left = avgSubtree(root.left);
-        Pair right = avgSubtree(root.right);
+        Pair left = avgSubtree(root.left,noOfNodes);
+        Pair right = avgSubtree(root.right,noOfNodes);
         int nominator = left.val+right.val+root.val;
         int denominator = left.nodeCount+right.nodeCount+1;
-        if(nominator/denominator == root.val) noOfNodes+=1;
+        if(nominator/denominator == root.val) noOfNodes[0]+=1;
         return new Pair(nominator,denominator);
     }
 }
