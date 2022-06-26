@@ -17,12 +17,9 @@ class Solution {
             temp = temp.next;
             count++;
         }
-        System.out.println(count);
         temp.next = head;
         k = k%count;
-        System.out.println(k);
         k = count - k; 
-        System.out.println(k);
         temp = head;
         while(k != 1){
             temp = temp.next;
