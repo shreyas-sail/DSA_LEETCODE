@@ -38,14 +38,14 @@ class Solution {
         }
         int doDel = (int) 1e9;
         int dontDel = (int) 1e9;
-        if(!c2Set.contains(c1[i])){
-            doDel = (int)c1[i] +  sumOfAscii(i-1,j,c1,c2,c2Set,c1Set,dp);
-        }if(!c1Set.contains(c2[j])){
-            doDel = (int)c2[j] +  sumOfAscii(i,j-1,c1,c2,c2Set,c1Set,dp);
-        }else{
+        // if(!c2Set.contains(c1[i])){
+        //     doDel = (int)c1[i] +  sumOfAscii(i-1,j,c1,c2,c2Set,c1Set,dp);
+        // }if(!c1Set.contains(c2[j])){
+        //     doDel = (int)c2[j] +  sumOfAscii(i,j-1,c1,c2,c2Set,c1Set,dp);
+        // }else{
             doDel = (int)c1[i] + sumOfAscii(i-1,j,c1,c2,c2Set,c1Set,dp); 
             dontDel =(int)c2[j] + sumOfAscii(i,j-1,c1,c2,c2Set,c1Set,dp);
-        }
+        // }
         return dp[i][j] = Math.min(doDel,dontDel);
     }
 }
