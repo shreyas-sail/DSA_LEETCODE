@@ -1,6 +1,6 @@
 class Solution {
     public int minimumCardPickup(int[] cards) {
-        int mini = (int) 1e9;
+        int mini = Integer.MAX_VALUE;
         int n = cards.length;
         Map<Integer,Integer> map = new HashMap<>();
         
@@ -10,6 +10,6 @@ class Solution {
             }
             map.put(cards[i],i);
         }
-        return mini == (int) 1e9?-1:mini;
+        return mini == Integer.MAX_VALUE?-1:mini;
     }
 }
