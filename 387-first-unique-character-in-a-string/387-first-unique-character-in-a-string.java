@@ -9,12 +9,11 @@ class Solution {
                 hashMap.put(s.charAt(i) ,1);
             }
         }
-        double min = 1e9;
-        for(Character c:hashMap.keySet()){
-            if(hashMap.get(c) == 1){
-                min = Math.min(min,s.indexOf(c));
+        for(int i = 0;i<s.length();i++){
+            if(hashMap.get(s.charAt(i)) == 1){
+                return i;
             }
         }
-        return min == 1e9?-1:(int)min;
+        return -1;
     }
 }
