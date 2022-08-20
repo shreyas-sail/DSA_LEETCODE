@@ -3,13 +3,11 @@ class Solution {
         Map<String,Integer> map = new HashMap<>();
         List<String> ans = new ArrayList<>();
         for(String s:cpdomains){
-            // System.out.println(s);
             String[] intStringList = s.split(" ");
             int num = Integer.parseInt(intStringList[0]);
             String onlyString = intStringList[1];
             int ind = onlyString.indexOf('.');
             while(ind > 0){
-                System.out.println(onlyString);
                 if(map.containsKey(onlyString)){
                     int n = map.get(onlyString);
                     map.put(onlyString,n+num);
