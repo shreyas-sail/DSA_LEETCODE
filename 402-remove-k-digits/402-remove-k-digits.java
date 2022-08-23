@@ -3,9 +3,10 @@ class Solution {
         if(k == num.length()) return "0";
         Stack<Integer> st = new Stack<>();
         char[] numChar = num.toCharArray();
+        int n = numChar.length;
         st.push(0);
         
-        for(int i = 1; i<num.length();i++){
+        for(int i = 1; i<n;i++){
             while(!st.isEmpty() && k != 0 
                   && 
                   Integer.valueOf(numChar[st.peek()]) > Integer.valueOf(numChar[i]) ){
@@ -17,15 +18,17 @@ class Solution {
             }
             st.push(i);
         }
-        while(!st.isEmpty() && k-- >0){
+        while(!st.isEmpty() && k-- > 0){
             st.pop();
         }
-        String ans = "";
-        while(!st.isEmpty()){
-            ans += numChar[st.pop()];
-        }
-        if(ans.isBlank()) return "0";
+        if(st.isEmpty()) return "0";
         
-        return new StringBuilder(ans).reverse().toString();
+        int size = st.size();
+        char[] ans = new char[size];
+        while(!st.isEmpty()){
+            ans[--size] += numChar[st.pop()];
+        }
+        
+        return new String(ans);
     }
 }
