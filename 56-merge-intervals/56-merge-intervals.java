@@ -7,7 +7,6 @@ class Solution {
             int[] prevRange = res.get(res.size()-1);
             if(prevRange[0]<=intervals[i][0] && intervals[i][0] <=prevRange[1]){
                 prevRange[1] =  Math.max(prevRange[1],intervals[i][1]);
-                System.out.println(Arrays.toString(prevRange));
                 res.set(res.size()-1,prevRange);
             }
             else{
