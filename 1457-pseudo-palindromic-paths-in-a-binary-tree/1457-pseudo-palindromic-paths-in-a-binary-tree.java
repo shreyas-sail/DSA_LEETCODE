@@ -25,9 +25,7 @@ class Solution {
     private void helper(TreeNode root,int[] map){
         if(root == null) return ;
         map[root.val] = map[root.val]+1;
-        // System.out.println(Arrays.toString(map));
         if(root.left == null && root.right == null){
-            System.out.println(Arrays.toString(map));
             if(checkIfPseudoPalindromicPaths(map)){
                 noOfPaths+=1;
             }
